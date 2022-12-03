@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Parent from "./pages/Parent/Parent";
 import { createContext, useState } from "react";
+import Form from "./pages/Form/Form";
 
 export const Counter_Context = createContext();
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <Counter_Context.Provider value={value}>
       <div>
-        <Parent />
+        <Form />
       </div>
     </Counter_Context.Provider>
   );
