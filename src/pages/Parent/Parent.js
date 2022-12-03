@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { Counter_Context } from "../../App";
 import Child from "../Child/Child";
 
 export default function Parent() {
-  const [counter, setCounter] = useState(0);
+  const { counter, setCounter } = useContext(Counter_Context);
   return (
     <div className="flex items-center justify-center h-[600px]">
       <div>

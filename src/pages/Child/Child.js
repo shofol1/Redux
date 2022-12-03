@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
+import { Counter_Context } from "../../App";
 
-export default function Child({ counter, setCounter }) {
+export default function Child() {
+  const { counter, setCounter } = useContext(Counter_Context);
   return (
     <div>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
