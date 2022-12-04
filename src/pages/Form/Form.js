@@ -1,44 +1,7 @@
 import React, { useReducer } from "react";
+import { initialState, reducer } from "../../State/formReducer";
 
 export default function Form() {
-  const initialState = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    country: "",
-    pcNumber: 0,
-    streetAddress: "",
-    city: "",
-    region: "",
-    postalCode: "",
-    terms: true,
-  };
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "INPUT":
-        return {
-          ...state,
-          [action.payload.name]: action.payload.value,
-        };
-      case "TOGGLE":
-        return {
-          ...state,
-          terms: !state.terms,
-        };
-      case "INCREMENT":
-        return {
-          ...state,
-          pcNumber: state.pcNumber + 1,
-        };
-      case "DECREMENT":
-        return {
-          ...state,
-          pcNumber: state.pcNumber - 1,
-        };
-      default:
-        return state;
-    }
-  };
   const [state, dispatch] = useReducer(reducer, initialState);
   const handleForm = (e) => {
     e.preventDefault();
